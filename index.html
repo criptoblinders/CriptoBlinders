@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+
+
+ 
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    @keyframes pageFadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    body {
+      opacity: 0;
+      animation: pageFadeIn ease-in 1;
+      animation-fill-mode: forwards;
+      animation-duration: 0.15s;
+      animation-delay: .1s
+    }
+
+    header {
+      background-color: #121213;
+      width: 100%;
+      padding-bottom: 15px;
+    }
+
+
+    .containerzao {
+      width: 100%;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+
+    h1 {
+      font-family: 'Montserrat';
+      font-size: 48px;
+      color: #F8F9F9;
+      text-align: center;
+      padding: 20px 0 0 0;
+    }
+
+
+    .destaque {
+      font-family: 'Montserrat';
+      color: #DFFF00;
+    }
+
+    .titulo {
+      position: relative;
+
+    }
+
+
+    .testado {
+      font-family: 'special_eliteregular';
+      font-size: 22px;
+      color: #F8F9F9;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+
+    }
+
+
+    .imagem {
+      display: flex;
+      flex: 25%;
+      justify-content: center;
+      margin: 3px;
+      padding: 30px;
+    }
+
+
+    .imagem:hover {
+      transform: scale(1.03);
+      transition: all .2s ease-in-out;
+    }
+
+
+    .descricao {
+      flex: 50%;
+      padding: 5px;
+      font-size: 18px;
+      margin: 20px 0px;
+      text-align: justify;
+      color: #fff;
+      padding-right: 40px;
+      max-width: 600px;
+      font-family: 'Poppins';
+    }
+
+    p {
+      font-family: 'Poppins';
+    }
+
+
+    .cta {
+      flex: 25%;
+      padding: 30px 50px 30px 30px;
+    }
+
+
+    .a-btn {
+      text-decoration: none;
+      color: #FF5733;
+      line-height: 1;
+      text-align: center;
+      display: inline-block !important;
+      width: 100%;
+      padding: 20px 20px;
+      border-radius: 11px;
+      background: linear-gradient(to bottom, #FF5F15 0%, #FF5F15 100%);
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 #FF5F15;
+      }
+
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+      }
+    }
+
+    .a-btn:hover {
+      text-decoration: none;
+      color: #FF5733;
+      line-height: 1;
+      text-align: center;
+      display: inline-block !important;
+      width: 100%;
+      padding: 20px 20px;
+      border-radius: 11px;
+      background: linear-gradient(to bottom, #c64104 0%, #c64104 100%);
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .5);
+      animation: pulse 1s infinite;
+      transform: scale(1.03);
+      transition: all .2s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 #FF5F15;
+      }
+
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+      }
+    }
+
+
+    .span-btn {
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+      display: block;
+      position: relative;
+      z-index: 1;
+      white-space: normal;
+      font-size: 33px;
+      font-weight: 600;
+      color: #fff;
+      font-family: 'fjalla_oneregular';
+      text-shadow: #000 0 1px 0;
+    }
+
+    .span-btn:hover {
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+      display: block;
+      position: relative;
+      z-index: 1;
+      white-space: normal;
+      font-size: 33px;
+      font-weight: 600;
+      color: #fff;
+      font-family: 'fjalla_oneregular';
+      text-shadow: #000 0 1px 0;
+    }
+
+
+    .text-cta {
+      text-align: center;
+      font-size: 14px;
+      color: #DFFF00;
+      font-family: 'Montserrat';
+      font-weight: 500;
+      padding: 15px 0px 0px 0px;
+    }
+
+
+    .pessoas {
+      display: block;
+      padding: 0px 0px 20px;
+      text-align: right;
+    }
+
+
+    .container-fb {
+      max-width: 720px;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+
+    .cta-texto {
+        text-align: center;
+      }
+
+
+
+
+    @media screen and (max-width: 820px) {
+      .containerzao {
+        flex-direction: column;
+        margin-top: 0;
+      }
+
+      .imagem {
+        display: flex;
+        width: 100%;
+        padding-bottom: 5px;
+      }
+
+      .pessoas {
+        text-align: center;
+      }
+
+      .descricao {
+        text-align: center;
+        padding: 0 30px 0;
+        line-height: 130%;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .testado {
+        font-size: 20px;
+      }
+
+      .cta {
+        margin-right: 0px;
+        padding: 10px 30px 15px;
+      }
+    }
+  </style>
+
+  <title>CriptoBlinders de Augusto Backes</title>
+  <meta name="description"
+    content="CriptoBlinders de Augusto Backes ⚡ Ganhe o desconto no pagamento a vista ou parcelado! Funcionando por tempo Limitado! Testado Hoje!">
+  <meta name="keywords" content="cupom, desconto, CriptoBlinders">
+
+
+
+ 
+
+
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+          {
+              "@type": "Question",
+              "name": "Como usar o cupom do CriptoBlinders?",
+              "acceptedAnswer": [{ "@type": "Answer", "text": "Basta clicar no botão \"Usar O Cupom\" no começo dessa página. Nós redirecionaremos você para o site do fabricante com o beneficio aplicado automaticamente." }]
+          },
+          { "@type": "Question", "name": "Posso pagar parcelado ou somente à vista?", "acceptedAnswer": [{ "@type": "Answer", "text": "O benefício (desconto e/ou frete grátis) pode ser obtido no pagamento à vista ou parcelado." }] },
+          { "@type": "Question", "name": "Quais são as formas de pagamento?", "acceptedAnswer": [{ "@type": "Answer", "text": "À vista: Boleto ou Pix // Parcelado: Cartões de Crédito." }] }
+      ]
+  }
+</script>
+
+  <!-- // FIM DOS SNIPPETS // -->
+  <!-- // FIM DOS SNIPPETS // -->
+
+</head>
+
+
+<body>
+  <header>
+    <div class="titulo">
+      <h1>CRIPTOBLINDERS<br><span class="destaque">Augusto Backes</span>
+    </div><br>
+
+
+    <div class="containerzao">
+      <div class="imagem"> <a href="https://hotm.art/ildnAoyu/" alt="" title=""><img
+            src="/cripto.webp" alt="CriptoBlinders" width="300" height="266"></a></div>
+
+      <div class="descricao">
+        <p>Aprenda agora, a partir de um método próprio de multiplicação e proteção de capital a como investir no mercado mais assimétrico do século XXI: o de criptomoedas. 
+        <br><br>
+         <p class="cta-texto">22 Módulos + 4 Bônus!</p>
+         <br>
+         <p class="cta-texto"><b>Últimas vagas! Já já acaba!</b></p>
+        </p>
+      
+      </div>
+
+      <div class="cta">
+        <a href="https://hotm.art/ildnAoyu/" class="a-btn" style="text-decoration: none;" alt="BOTÃO" title="VEJA POR DENTRO">
+          <span class="span-btn">VER O CONTEÚDO</span></a>
+
+
+        <div class="text-cta">
+          CLIQUE E VEJA POR DENTRO!
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+  <section class="comments py-4">
+    <div class="container-fb">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="fb-comments" style="margin-top: 5px;">
+            <div class="fb-comments-header">
+              <span>21 comentarios</span>
+            </div>
+            <div class="fb-comments-wrapper" id="2">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="/assets/img/comentarios/m2.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>                        Patrick Silva</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Show! Excelente produto! Sempre compro os cursos dele! 😘
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>8</likes>
+                      <date>4 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="3">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m3.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Vitória Moreira</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Uma amiga me indicou esse curso. Estou estudando e adorando! ótima qualidade...
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>9</likes>
+                      <date>5 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="4">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m4.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Mariana Martins</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Meu, impressionante! Tem muitas aulas inéditas!!
+                      .</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>11</likes>
+                      <date>12 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="5">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m5.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>João Castro</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">ótima compra! o curso é fantástico!!</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>15</likes>
+                      <date>19 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="6">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m6.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Isabella Lopes</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Recomendo estou estudando aos poucos porque é muita coisa mesmo... 😘😘😘</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>17</likes>
+                      <date>24 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="7">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m7.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Roberta Gomes</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Recebi o acesso a compra em menos de 2 minutos!!!!!!! 🥰</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>18</likes>
+                      <date>26 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="9">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m11.jpeg"
+                        width="48px" height="48px">
+                    </td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Fabiano Souza</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Recomendo a tds! curso de alta qualidade, aulas bem explicativas!</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>22</likes>
+                      <date>39 min</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper">
+              <table class="fb-comments-comment" id="10">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m12.jpeg"
+                        width="48px" height="48px">
+                    </td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Ana Sofia</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Para alguém como eu, que não tem costume de comprar pela internet, ganhar desconto desses parece até mentira.... Obrigaduuuu. 😍😍😍</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>41</likes>
+                      <date>1 h</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="11">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m15.jpeg"
+                        width="48px" height="48px">
+                    </td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>	
+                          Laura Flores</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Meu acesso chegou agora a pouco, já comecei a assistir e em breve vamos colocar em prática os ensinamentos, obrigada mesmo gente 🙏🙏🙏🙏🙏🙏</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>40</likes>
+                      <date>1 h</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="12">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m16.jpeg"
+                        width="48px" height="48px">
+                    </td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Daniela Costa</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Muito Obrigada Adorei ...🌹🥰🙋</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>47</likes>
+                      <date>1 h</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper" id="13">
+              <table class="fb-comments-comment">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m17.jpeg"
+                        width="48px" height="48px"></td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Rodrigo Dias</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Estou totalmente satisfeita com este curso!!! </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>50</likes>
+                      <date>1 h</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="fb-comments-wrapper">
+              <table class="fb-comments-comment" id="14">
+                <tbody>
+                  <tr>
+                    <td rowspan="3" class="fb-comments-comment-img"><img src="./assets/img/comentarios/m18.jpeg"
+                        width="48px" height="48px">
+                    </td>
+                    <td>
+                      <div class="fb-comments-comment-name">
+                        <name>Isabelle Correia</name>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-text">Augusto seu produto é fantástico, muito obrigadaa por permitir que ele seja acessível!</td>
+                  </tr>
+                  <tr>
+                    <td class="fb-comments-comment-actions">
+                      <like>Curtir</like>
+                      ·
+                      <reply>Responder</reply>
+                      ·
+                      <likes>66</likes>
+                      <date>1 h</date>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <div class="title-faq">
+    <h2>Perguntas Frequentes</h2>
+  </div>
+  <div class="faq">
+    <div class="faq-div">
+      <input type="checkbox" id="title1" />
+      <label for="title1">Como é o CriptoBlinders?</label>
+
+      <div class="content">
+        <p>Foi criado de forma a apresentar o conteúdo fundamental no início e construir a base para o conhecimento mais avançado que será introduzido na sequencia. Você receberá acesso a plataforma onde pode escolher quais módulos cursar dentre as várias opções disponíveis. É a sua chance de aprender a lidar com a volatilidade do Bitcoin e colher os frutos com este conhecimento.</p>
+      </div>
+
+      <input type="checkbox" id="title2" />
+      <label for="title2">Posso pagar parcelado ou somente à vista?</label>
+
+      <div class="content">
+        <p>O benefício (desconto e/ou frete grátis) pode ser obtido no pagamento à vista ou parcelado.</p>
+      </div>
+
+      <input type="checkbox" id="title3" />
+      <label for="title3">Quais são as formas de pagamento?</label>
+
+      <div class="content">
+        <p>À vista: Boleto ou Pix // Parcelado: Cartões de Crédito.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
